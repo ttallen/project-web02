@@ -1,0 +1,380 @@
+@charset "utf-8";
+/* 簡單流變媒體
+   注意: 流變媒體要求您必須移除 HTML 中媒體的高度和寬度屬性
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 不支援最大寬度，因此寬度預設為 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver 流變格線屬性
+	----------------------------------
+	dw-num-cols-mobile:		12;
+	dw-num-cols-tablet:		12;
+	dw-num-cols-desktop:	12;
+	dw-gutter-percentage:	25;
+	
+	靈感來自於 Ethan Marcotte 的「具回應功能的網頁設計」 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	以及 Joni Korpi 的「黃金格線系統」
+	http://goldengridsystem.com/
+*/
+
+/* 行動版面: 480px 以下。 */
+body {
+	background-color: #3c3c3c;
+}
+.gridContainer {
+	background-color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 0.7583%;
+	padding-right: 0.7583%;
+	width: 89.4833%;
+}
+#LayoutDiv0 {
+	font-family: "微軟正黑體", "標楷體", "Arial";
+	font-size: 0.7em;
+	padding:0.8em;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv0 h1 a {
+	text-decoration: none;
+	color: #000;
+}
+#LayoutDiv0 h1 {
+	display: inline-block;
+}
+.menu {
+	list-style-type: none;
+    /*隱藏選單開始*/
+    max-height: 0px;
+    overflow: hidden;
+    /*隱藏選單結束*/
+    transition: max-height 1.0s;
+    margin-top: 1px;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    z-index: 100;
+    /*header 80px+1px boder 線條*/
+    top: 59px;
+    left: -40px;
+    right: 0;
+    background: rgba(52,41,14,1);
+}
+.menu li {
+	float: none;
+    border-bottom: 1px dashed #69CA62;
+}
+.menu li a {
+	color: #fff;
+	text-decoration: none;
+	font-family: "微軟正黑體", "標楷體", "Arial";
+	font-size: 1.1em;
+	transition: all 0.3s;
+	display: block;
+	padding: 1em;
+}
+.menu li a:hover {
+	background: rgba(92,51,14,1);
+    color: #fff;
+}
+.showmenu{
+    display: block;
+    float: right;
+    margin: 1em;
+  }
+  /*jQ點擊後動態在 body 加上 class */
+  .menu-show .menu{
+    max-height: 500px
+  }
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	background-image: url(../images/bg.png);
+	background-repeat: repeat;
+	background-color: rgba(204,153,102,0.9);
+	text-align:center;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding: 5.5em 0 2em 0;
+	min-height: 200px;
+	font-family: "微軟正黑體", "標楷體", "Arial";
+}
+#LayoutDiv2 p {
+	line-height:1.4em;
+	font-size:1.2em;
+}
+#about {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family:"微軟正黑體", "標楷體", "新細明體";
+	color:rgba(51,51,51,1);
+    padding:1.5em 0; 
+}
+#about #story {
+	padding-top: 0.1em;
+	padding-left: 0.5em;
+}
+#about p {
+	font-size: 1.2em;
+}
+#panel {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-family:"微軟正黑體", "標楷體", "新細明體";
+	color:rgba(51,51,51,1);
+    padding:1.5em 0; 
+}
+#panel dl {
+	padding-top: 1.5em;
+}
+#panel dt {
+	background-color:rgba(204,153,51,1);
+	padding:0.6em 0 0.6em 1.8em;
+	border-bottom: solid 2px #570001;
+	cursor: pointer;
+	font-size: 1.3em;
+	}
+#panel .fas {
+    padding-right: 0.8em;
+    font-size: 1.2em;
+}
+#panel dd {
+	padding:1em 0;
+}
+#panel p {
+	font-size: 1.2em;
+	padding-right: 1em;
+}
+#LayoutDiv3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding-bottom: 2em;
+	font-family:"微軟正黑體", "標楷體", "新細明體";
+	font-size: 1.1em;
+}
+#LayoutDiv3 img {
+	padding-top: 1.5em;
+}
+#LayoutDiv3 .coffee {
+	padding: 0.5em 2.5em;
+}
+#footer {
+	font-family:"微軟正黑體", "標楷體", "新細明體";
+	padding:1.25em 0;
+	min-height:3em;
+	background-color:rgba(153,153,153,1);
+	text-align:center;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+/* 表格版面: 481px 到 768px。樣式繼承自: 行動版面。 */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	padding-left: 0.775%;
+	padding-right: 0.775%;
+	width: 91.45%;
+}
+#LayoutDiv0 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+.showmenu {
+	display: none;
+}
+#nav {
+	background-color:rgba(52,41,14,1);
+	text-align: center;
+	clear: both;
+	float: left;
+	width: 100%;
+	display: block;
+}
+.menu {
+	list-style-type: none;
+	padding: 0em;
+    max-height: none;
+    overflow: visible;
+    position: static;
+}
+.menu li {
+	width: 25%;
+	float: left;
+	margin: 0 auto;
+	border-bottom: none;
+}
+.menu li a {
+	color: #fff;
+	text-decoration: none;
+	font-family: "微軟正黑體", "標楷體", "Arial";
+	font-size: 1.1em;
+}
+.menu li a:hover {
+	color: #CECECE;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding: 5.5em 0 2em 0;
+}
+#LayoutDiv2 p {
+	line-height:1.6em;
+	font-size:1.2em;
+}
+#panel {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv3 img {
+	float: left; 
+}
+#LayoutDiv3 #coffeeAll {
+	clear: left;
+}
+#LayoutDiv3 .coffee {
+	padding: 0.6em 0  0.5em 6em;
+	float: left;
+}
+#footer {
+	padding:1.25em 0;
+	min-height:3em;
+	background-color:rgba(153,153,153,1);
+	text-align:center;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-size: 1.05em;
+}
+
+}
+
+/* 桌面版面: 769px 到最大 1232px。樣式繼承自: 行動版面和表格版面。 */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	max-width: 1232px;
+	padding-left: 0.75%;
+	padding-right: 0.75%;
+	margin: auto;
+	width: 83%;
+}
+#LayoutDiv0 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	padding: 5.5em 0 6.5em 0;
+}
+#LayoutDiv2 p {
+	line-height:2em;
+	font-size:1.5em;
+}
+#panel {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv3 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv3 #coffeeAll {
+	float: left;
+	clear: none;
+}
+#LayoutDiv3 .coffee {
+	padding: 0.6em 0  0.5em 7em;
+	float: left;
+}
+#footer {
+	padding:1.8em 0;
+	min-height:4.5em;
+	background-color:rgba(153,153,153,1);
+	text-align:center;
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+	font-size: 1.05em;
+}
+
+}
