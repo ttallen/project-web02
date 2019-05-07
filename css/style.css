@@ -87,7 +87,7 @@ body {
 }
 .menu li a:hover {
 	background: rgba(92,51,14,1);
-    color: #fff;
+    color: #DDDDDD;
 }
 .showmenu{
     display: block;
@@ -245,9 +245,7 @@ body {
 	font-family: "微軟正黑體", "標楷體", "Arial";
 	font-size: 1.1em;
 }
-.menu li a:hover {
-	color: #CECECE;
-}
+
 #LayoutDiv1 {
 	clear: both;
 	float: left;
